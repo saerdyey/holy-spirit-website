@@ -7,7 +7,7 @@ const Nav = () => {
     return(
         <div id="navigation">
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <a class="navbar-brand" href="#" id="logo"><img src={logo} alt=""/>
+                <a class="navbar-brand" href="/holy-spirit" id="logo"><img src={logo} alt=""/>
                 <span>Barangay Holy Spirit</span> 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@ const Nav = () => {
                     
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <Link to="/brgyappforms"><a class="nav-link">Home <span class="sr-only">(current)</span></a></Link>
+                        <Link to="/holy-spirit"><a class="nav-link">Home<span class="sr-only">(current)</span></a></Link>
                     </li>
                     
                     <li class="nav-item dropdown">
@@ -26,13 +26,13 @@ const Nav = () => {
                         Our Barangay
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <Link to="/brgyappforms/general-info"><a class="dropdown-item">General Info</a></Link>
-                        <Link to="/brgyappforms/history"><a class="dropdown-item">History</a></Link>
-                        <Link to="/brgyappforms/maps"><a class="dropdown-item disabled">Maps</a></Link>
+                        <Link to="/holy-spirit/general-info"><a class="dropdown-item">General Info</a></Link>
+                        <Link to="/holy-spirit/history"><a class="dropdown-item">History</a></Link>
+                        <Link to="/holy-spirit/maps"><a class="dropdown-item disabled">Maps</a></Link>
                         <a class="dropdown-item" href="#">Photo Album</a>
-                        <Link to="/brgyappforms/forms"><a class="dropdown-item">Forms</a></Link>
+                        <Link to="/holy-spirit/forms"><a class="dropdown-item">Forms</a></Link>
                         <div class="dropdown-divider"></div>
-                        <Link to="/brgyappforms/contact"><a class="dropdown-item" href="#">Contact Us</a></Link>
+                        <Link to="/holy-spirit/contact"><a class="dropdown-item" href="#">Contact Us</a></Link>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
