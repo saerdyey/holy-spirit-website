@@ -1,0 +1,256 @@
+#geninfo {
+  width: 100%;
+  margin: auto;
+  margin-top: 25vh;
+}
+
+#geninfo h1 {
+  text-align: center;
+}
+
+#geninfo .intro-container h1,
+h2 {
+  text-align: start;
+}
+
+.intro-container p {
+  text-align: start;
+}
+.intro-text-container p {
+  text-align: start;
+}
+
+#geninfo .intro-container button {
+  border: 0;
+  background-color: #ffffff;
+}
+
+.intro-container h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.intro-container h1 {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.intro-container p {
+  font-size: 20px;
+}
+
+.geninfo-container {
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+  /* border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5); */
+}
+
+.intro-text-container,
+.mv-container,
+.population-container,
+.economy-container {
+  margin: 20px;
+  padding: 30px;
+}
+
+.mv-container h2 {
+  text-align: center;
+}
+
+.mv-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.mv-box {
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  width: 30%;
+  margin-bottom: 40px;
+}
+
+.mv-box p {
+  padding: 10px;
+}
+
+.mv-box img {
+  width: 100%;
+  height: 180px;
+  border-radius: 20px 20px 0px 0px;
+  text-align: center;
+}
+
+.population-container p {
+  text-align: start;
+}
+
+.population-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.population-category h2 {
+  text-align: center;
+}
+.population-category p {
+  text-align: center;
+}
+
+.population-household {
+  width: 45%;
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.economy-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.economy {
+  width: 30%;
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.economy-container h2,
+h3 {
+  text-align: center;
+}
+
+.economy-container li {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 415px) {
+  #geninfo {
+    margin-top: 12vh;
+  }
+  #geninfo h2 {
+    text-align: center;
+  }
+  .intro-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .intro-container h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .intro-container p {
+    font-size: 10px;
+  }
+
+  .geninfo-container {
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    /* border-radius: 20px;
+          -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5); */
+  }
+  .intro-text-container,
+  .mv-container,
+  .population-container,
+  .economy-container {
+    margin: 0;
+    padding: 10px;
+  }
+  .mv-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mv-box {
+    width: 85%;
+  }
+  .population-category {
+    flex-direction: column;
+    align-items: center;
+  }
+  .population-household {
+    width: 85%;
+  }
+  .economy-category {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .economy {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  #geninfo {
+    margin-top: 12vh;
+  }
+  #geninfo h2 {
+    text-align: center;
+  }
+  .intro-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .intro-container h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .intro-container p {
+    font-size: 10px;
+  }
+
+  .geninfo-container {
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    /* border-radius: 20px;
+          -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5); */
+  }
+  .intro-text-container,
+  .mv-container,
+  .population-container,
+  .economy-container {
+    margin: 0;
+    padding: 10px;
+  }
+  .mv-boxes {
+    flex-direction: column;
+  }
+  .mv-box {
+    width: 100%;
+  }
+  .population-category {
+    flex-direction: column;
+  }
+  .population-household {
+    width: 100%;
+  }
+  .economy-category {
+    flex-direction: column;
+  }
+
+  .economy {
+    width: 100%;
+  }
+}
