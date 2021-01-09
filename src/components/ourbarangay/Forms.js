@@ -17,7 +17,7 @@ const Forms = () => {
                             <p>6 months residency in the barangay</p>
                             <p>DVA ID/Proof of residency from DVA (for resident)</p>
                             <p>Certificate of employment issued by employer (Kasambahay, driver etc.)</p>
-                            <Link to="/brgyid-form"><button class="btn btn-outline-info my-2 my-sm-0"><a href="">Application Form</a></button></Link>
+                            <Link to="/holy-spirit/brgyid-form"><button class="btn btn-outline-info my-2 my-sm-0"><a href="">Application Form</a></button></Link>
                         </div>
                         <div className="form">
                             <h3>Compliant KP Form no. 7</h3>
