@@ -28,8 +28,8 @@ const Nav = () => {
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <Link to="/holy-spirit/general-info"><a class="dropdown-item">General Info</a></Link>
                         <Link to="/holy-spirit/history"><a class="dropdown-item">History</a></Link>
-                        <Link to="/holy-spirit/maps"><a class="dropdown-item disabled">Maps</a></Link>
-                        <a class="dropdown-item" href="#">Photo Album</a>
+                        <Link to="/holy-spirit/maps"><a class="dropdown-item">Maps</a></Link>
+                        <a class="dropdown-item disabled" href="#">Photo Album</a>
                         <Link to="/holy-spirit/forms"><a class="dropdown-item">Forms</a></Link>
                         <div class="dropdown-divider"></div>
                         <Link to="/holy-spirit/contact"><a class="dropdown-item" href="#">Contact Us</a></Link>
@@ -51,12 +51,6 @@ const Nav = () => {
                         <a class="nav-link disabled" href="#">Associations</a>
                     </li>
                     </ul>
-                    
-                    
-                    {/* <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-                    </form> */}
                 </div>
                     
             </nav>

@@ -5,39 +5,31 @@ import '../Forms.css';
 const BrgyIdForm = () => {
 
     const [inputs, setInputs] = useState({
-        personal_data:{
-            first_name:'',
-            middle_name:'',
-            last_name:'',
-            mobile_no:'',
-            tel_no:'',
-            address1:'',
-            address2:'',
-            employer_name:'',
-            length_stay:0,
-            birth_date:{
-                bd_year:0,
-                bd_month:0,
-                bd_day:0,
-            },
-            father_name:'',
-            mother_name:'',
-            gender:'',
-            civil_status:'',
-            
-        },
-        emergency_contact:{
-            contact_person:'',
-            relationship:'',
-            ec_address:'',
-            ec_contact:'',
-        },
-        classification:'',
+        first_name:'',
+        middle_name:'',
+        last_name:'',
+        mobile_no:'',
+        tel_no:'',
+        address1:'',
+        address2:'',
+        employer_name:'',
+        length_stay:0,
+        birth_date:'',
+        father_name:'',
+        mother_name:'',
+        gender:'Male',
+        civil_status:'Single',
+        contact_person:'',
+        relationship:'',
+        ec_address:'',
+        ec_contact:'',
+        classification:'Homeowner',
         isComplete:false
     })
 
     const inputsHandler = (e) => {
         setInputs({...inputs, [e.target.id]:e.target.value})
+        console.log(e.target.value)
     }
 
     const submitHandler = (e) => {
@@ -49,7 +41,8 @@ const BrgyIdForm = () => {
         <div className="container">
             <div id="form-container">
                 <div id="form-wrapper">
-                    <form onSubmit={submitHandler}>
+                    <form>
+                        <h3>Personal Details</h3>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="first_name">First Name</label>
@@ -65,7 +58,7 @@ const BrgyIdForm = () => {
                             </div>
                             <div className="form-group col-md-3">
                                 <label htmlFor="inputState">Gender</label>
-                                <select onChange={inputsHandler} id="purpose" className="form-control">
+                                <select onChange={inputsHandler} id="gender" className="form-control">
                                     <option value="Male" selected>Male</option>
                                     <option value="Female">Female</option>
                                 </select>
@@ -113,16 +106,40 @@ const BrgyIdForm = () => {
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="birth_date">Birthdate</label>
-                                <input type="date" id="birth_date" min="1950-01-01" max="2020-12-31"/>
+                                <input onChange={inputsHandler} type="date" id="birth_date" min="1950-01-01" max="2020-12-31"/>
                             </div>
                         </div>
                         <div className="form-row">
-                            <div className="form-group col-md-9">
+                            <div className="form-group col-md-6">
                                 <label htmlFor="father_name">Father's Name</label>
                                 <input onChange={inputsHandler} type="text" className="form-control" id="father_name" placeholder="Father's Name"/>
                             </div>
-                            
+                            <div className="form-group col-md-6">
+                                <label htmlFor="mother_name">Mother's Name</label>
+                                <input onChange={inputsHandler} type="text" className="form-control" id="mother_name" placeholder="Father's Name"/>
+                            </div>
                         </div>
+                        <br/>
+                        <h3>Emergency Contact Details</h3>
+                        <div className="form-row">
+                            <div className="form-group col-md-6">
+                                <label htmlFor="contact_person">Contact Person</label>
+                                <input onChange={inputsHandler} type="text" className="form-control" id="contact_person" placeholder="Contact Person"/>
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label htmlFor="relationship">Relationship</label>
+                                <input onChange={inputsHandler} type="text" className="form-control" id="relationship" placeholder="Relationship"/>
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label htmlFor="ec_address">Address</label>
+                                <input onChange={inputsHandler} type="text" className="form-control" id="ec_address" placeholder="Address"/>
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label htmlFor="ec_contact">Contact No.</label>
+                                <input onChange={inputsHandler} type="text" className="form-control" id="ec_contact" placeholder="Contact"/>
+                            </div>
+                        </div>
+
                         <div className="form-group">
                             <label htmlFor="classification">Classification</label>
                             <div className="col-4">
@@ -133,7 +150,7 @@ const BrgyIdForm = () => {
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary" onClick={submitHandler}>Submit</button>
                     </form>
                 </div>
             </div>
