@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 
 import '../Forms.css';
 
@@ -29,12 +30,13 @@ const BrgyIdForm = () => {
 
     const inputsHandler = (e) => {
         setInputs({...inputs, [e.target.id]:e.target.value})
-        console.log(e.target.value)
     }
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log(inputs)
+        const data = inputs;
+        axios.post('http://localhost:8011/holy-spirit-website-api/insert.php', data)
+        .then(res => console.log(res.data));
     }
 
     return(
@@ -58,15 +60,15 @@ const BrgyIdForm = () => {
                             </div>
                             <div className="form-group col-md-3">
                                 <label htmlFor="inputState">Gender</label>
-                                <select onChange={inputsHandler} id="gender" className="form-control">
-                                    <option value="Male" selected>Male</option>
+                                <select onChange={inputsHandler} defaultValue="Male" id="gender" className="form-control">
+                                    <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
                             </div>
                             <div className="form-group col-md-3">
                                 <label htmlFor="inputState">Civil Status</label>
-                                <select onChange={inputsHandler} id="civil_status" className="form-control">
-                                    <option value="Single" selected>Single</option>
+                                <select onChange={inputsHandler} defaultValue="Single" id="civil_status" className="form-control">
+                                    <option value="Single">Single</option>
                                     <option value="Married">Married</option>
                                     <option value="Widowed">Widowed</option>
                                 </select>
@@ -98,7 +100,7 @@ const BrgyIdForm = () => {
                             <div className="form-group col-md-6">
                                 <label htmlFor="stay_length">Length of Stay in Holy Spirit</label>
                                 <div className="col-3">
-                                    <input onChange={inputsHandler} type="number" className="form-control" id="stay_length" placeholder="0" aria-describedby="stay_lengthHelpInline"/>
+                                    <input onChange={inputsHandler} type="number" className="form-control" id="length_stay" placeholder="0" aria-describedby="stay_lengthHelpInline"/>
                                 </div>
                                 <small id="stay_lengthHelpInline" class="text-muted">
                                     Number of years you have stayed in Barangay Holy Spirit
@@ -116,7 +118,7 @@ const BrgyIdForm = () => {
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="mother_name">Mother's Name</label>
-                                <input onChange={inputsHandler} type="text" className="form-control" id="mother_name" placeholder="Father's Name"/>
+                                <input onChange={inputsHandler} type="text" className="form-control" id="mother_name" placeholder="Mother's Name"/>
                             </div>
                         </div>
                         <br/>
@@ -143,8 +145,8 @@ const BrgyIdForm = () => {
                         <div className="form-group">
                             <label htmlFor="classification">Classification</label>
                             <div className="col-4">
-                                <select onChange={inputsHandler} id="classification" className="form-control">
-                                    <option value="Homeowner" selected>Homeowner</option>
+                                <select onChange={inputsHandler} defaultValue="Homeowner" id="classification" className="form-control">
+                                    <option value="Homeowner">Homeowner</option>
                                     <option value="Household Helper">Household Helper</option>
                                     <option value="Barangay Employee">Barangay Employee</option>
                                 </select>
