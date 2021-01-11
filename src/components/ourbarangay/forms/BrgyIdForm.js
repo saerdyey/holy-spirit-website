@@ -32,18 +32,41 @@ const BrgyIdForm = () => {
         setInputs({...inputs, [e.target.id]:e.target.value})
     }
 
+    const handleValidation = () => {
+
+        let fields = inputs;
+        let errors = {};
+        let formIsValid = true;
+
+        if (fields.first_name === ""){
+            formIsValid = false;
+            errors["first_name"] = "First name cannot be empty"
+        }
+
+        if (fields.first_name.match(/^[a-zA-Z]+$/)){
+            formIsValid = false;
+            errors["first_name"] = "First name should contain letters only"
+        }
+
+        return formIsValid;
+    }
+
     const submitHandler = (e) => {
         e.preventDefault()
         const data = inputs;
-        axios.post('http://localhost:8011/holy-spirit-website-api/insert.php', data)
-        .then(res => console.log(res.data));
+        if(handleValidation()){
+            axios.post('http://localhost:8011/holy-spirit-website-api/insert.php', data)
+            .then(res => console.log(res.data));
+            console.log("Form Submitted!")
+        }
+        
     }
 
     return(
         <div className="container">
             <div id="form-container">
                 <div id="form-wrapper">
-                    <form>
+                    <form onSubmit={submitHandler}>
                         <h3>Personal Details</h3>
                         <div className="form-row">
                             <div className="form-group col-md-6">
@@ -152,7 +175,7 @@ const BrgyIdForm = () => {
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" className="btn btn-primary" onClick={submitHandler}>Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
