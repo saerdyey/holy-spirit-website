@@ -10,6 +10,7 @@ import Forms from './components/ourbarangay/Forms'
 import ContactUs from './components/ourbarangay/ContactUs'
 import Footer from './components/Footer'
 import BrgyIdForm from './components/ourbarangay/forms/BrgyIdForm'
+import AdminDashboard from './components/admin/dashboard/AdminDashboard'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/holy-spirit/forms" exact component={Forms}/>
         <Route path="/holy-spirit/contact" exact component={ContactUs}/>
         <Route path="/holy-spirit/brgyid-form" exact component={BrgyIdForm}/>
+        <Route path="/holy-spirit/admin" exact component={AdminDashboard}/>
       </Switch>
       <Footer/>
     </div>

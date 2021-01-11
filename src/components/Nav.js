@@ -40,7 +40,7 @@ const Nav = () => {
                         Government
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">What Department do I nedd?</a>
+                        <Link to="/holy-spirit/admin"><a class="dropdown-item" href="#">What Department do I nedd?</a></Link>
                         <a class="dropdown-item" href="#">Barangay Officials</a>
                         </div>
                     </li>
