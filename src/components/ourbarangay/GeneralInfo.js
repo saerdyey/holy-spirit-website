@@ -15,7 +15,7 @@ const GeneralInfo = () => {
                     <h1>HOLY SPIRIT,</h1>
                     <h1>QUEZON CITY</h1>
                     <p>will continue to be a world class barangay and a model of exemplary governance within Quezon City…</p>
-                    <button><a class="btn btn-outline-info my-2 my-sm-0" href="#mv">Mission and Vision</a></button>
+                    <button><a className="btn btn-outline-info my-2 my-sm-0" href="#mv">Mission and Vision</a></button>
                 </div>
                 <div className="intro-text-container">
                     <h2>INTRODUCTION</h2>

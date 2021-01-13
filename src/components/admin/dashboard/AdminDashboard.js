@@ -1,14 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-import RecordList from './RecordList'
+// import RecordList from './RecordList'
 
 
 const AdminDashboard = () => {
-
-    useEffect(() => {
-        getList();
-      }, []);
 
     const [idApplication, setIdApplication] = useState()
 
@@ -16,16 +12,20 @@ const AdminDashboard = () => {
         axios.get('http://localhost:8011/holy-spirit-website-api/list.php')
         .then(response => {
             setIdApplication(response.data);
+            console.log('must be 1st')
         })
         .catch((error) => {
             console.log(error)
         })
     }
-    console.log(idApplication)
-    console.log(JSON.stringify(idApplication))
+
+    useEffect(() => {
+        getList();
+    }, []);
+
     return(
         <div>
-            {/* <h1>Admin Dashboard</h1>
+            <h1>Admin Dashboard</h1>
             <h3>ID Applications List</h3>
             <table className="table table-striped" style={{marginTop: 20}}>
                 <thead>
@@ -36,12 +36,10 @@ const AdminDashboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {idApplication.map((app) => {
-                        <div><h3>hello</h3></div>
-                    })}
+                    {console.log('must be 2nd')}
                 </tbody>
-            </table> */}
-            <h1>hello</h1>
+            </table>
+            <p>hello</p>
         </div>
     )
 }
