@@ -1,16 +1,16 @@
 import React from 'react'
 
-const RecordList = (props) => {
+const RecordList = ({first_name, middle_name, last_name}) => {
     return(
         <tr>
             <td>
-                {this.props.object.first_name}
+                {first_name}
             </td>
             <td>
-                {this.props.object.middle_name}
+                {middle_name}
             </td>
             <td>
-                {this.props.object.last_name}
+                {last_name}
             </td>
             <td>
             <button className="btn btn-primary">Accept</button>

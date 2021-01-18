@@ -1,27 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import RecordList from './RecordList';
 
 // import RecordList from './RecordList'
 
 
 const AdminDashboard = () => {
 
-    const [idApplication, setIdApplication] = useState()
-
-    const getList = () => {
-        axios.get('http://localhost:8011/holy-spirit-website-api/list.php')
-        .then(response => {
-            setIdApplication(response.data);
-            console.log('must be 1st')
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
-
     useEffect(() => {
         getList();
     }, []);
+
+    const [query, setQuery] = useState([])
+
+    const url = process.env.REACT_APP_BASE_URL;
+    
+    const getList = async () => {
+        const response = await fetch(url + '/list.php');
+        const data = await response.json();
+        setQuery(data)
+    }
+
+    const list = () => {
+        return query.map(obj =>{
+            return <RecordList first_name={obj.first_name} middle_name={obj.middle_name} last_name={obj.last_name
+            }/>
+        })
+    }
 
     return(
         <div>
@@ -36,10 +41,9 @@ const AdminDashboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {console.log('must be 2nd')}
+                    {/* {list()} */}
                 </tbody>
             </table>
-            <p>hello</p>
         </div>
     )
 }

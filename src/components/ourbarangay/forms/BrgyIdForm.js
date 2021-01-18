@@ -51,11 +51,13 @@ const BrgyIdForm = () => {
         return formIsValid;
     }
 
+    const url = process.env.REACT_APP_BASE_URL;
+
     const submitHandler = (e) => {
         e.preventDefault()
         const data = inputs;
         if(handleValidation()){
-            axios.post('http://localhost:8011/holy-spirit-website-api/insert.php', data)
+            axios.post(url + '/insert.php', data)
             .then(res => console.log(res.data));
             console.log("Form Submitted!")
         }
