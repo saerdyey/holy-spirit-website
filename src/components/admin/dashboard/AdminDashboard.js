@@ -16,10 +16,13 @@ const AdminDashboard = () => {
     const url = process.env.REACT_APP_BASE_URL;
     
     const getList = async () => {
-        const response = await fetch(url + '/list.php');
-        const data = await response.json();
-        setApplications(data)
-        
+        axios.get(url + '/list.php')
+        .then(response => {
+            setApplications(response.data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
     console.log(applications)
     return(

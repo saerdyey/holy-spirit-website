@@ -1,6 +1,12 @@
 import React from 'react'
 
 const RecordList = ({first_name, middle_name, last_name}) => {
+
+
+    const deleteHandler = () => {
+        
+    }
+
     return(
         <tr>
             <td>
