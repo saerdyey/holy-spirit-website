@@ -11,23 +11,17 @@ const AdminDashboard = () => {
         getList();
     }, []);
 
-    const [query, setQuery] = useState([])
+    const [applications, setApplications] = useState([])
 
     const url = process.env.REACT_APP_BASE_URL;
     
     const getList = async () => {
         const response = await fetch(url + '/list.php');
         const data = await response.json();
-        setQuery(data)
+        setApplications(data)
+        
     }
-
-    const list = () => {
-        return query.map(obj =>{
-            return <RecordList first_name={obj.first_name} middle_name={obj.middle_name} last_name={obj.last_name
-            }/>
-        })
-    }
-
+    console.log(applications)
     return(
         <div>
             <h1>Admin Dashboard</h1>
@@ -41,7 +35,9 @@ const AdminDashboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {list()} */}
+                    {applications.map((application) => {
+                        return <RecordList first_name={application.first_name} middle_name={application.middle_name} last_name={application.last_name}/>
+                    })}
                 </tbody>
             </table>
         </div>
